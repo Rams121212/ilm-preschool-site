@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Events and Gallery – ILM Preschool</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<style>body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-image: url("assets/b11.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+} </style>
+<body>
+  <header>
+    <h1> ILM PRE-SCHOOL </h1>
+    <h4>The School of Excellence</h4>
+    <h5>Plot No. 20, Agrawal Colony, Jawla Khandarban Road, Basmat, Hingoli-431512</h5>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="courses.html">Courses and Facilities</a></li>
+        <li><a href="events.html">Events and Gallery</a></li>
+        <li><a href="society.html">Society</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="event-gallery">
+    <h1>Our Events</h1>
+    <div class="gallery-grid">
+      <div class="event-card"><img src="images/1.jpeg" alt="Event 1"><h4>International Yoga Day 2025</h4></div>
+      <div class="event-card"><img src="images/2.jpeg" alt="Event 2"><h4>Food Fest Program 2025</h4></div>
+      <div class="event-card"><img src="images/3.jpeg" alt="Event 3"><h4>IQ Test & Counselling Program for Kids 2024</h4></div>
+    </div>
+  </section>
+
+  <!-- Sidegallery 1 -->
+  <section class="sidegallery-section">
+    <h2>Welcome Ceremony 2025</h2>
+    <div class="sidegallery-container" id="sidegallery1">
+      <button class="nav prev" onclick="prevSlide('sidegallery1')">❮</button>
+      <div class="sidegallery-slide">
+        <img src="images/w1.jpeg" alt="Event 1">
+        <img src="images/w2.jpeg" alt="Event 2">
+        <img src="images/w3.jpeg" alt="Event 3">
+        <img src="images/w4.jpeg" alt="Event 4">
+        <img src="images/w5.jpeg" alt="Event 5">
+        <img src="images/w6.jpeg" alt="Event 6">
+        <img src="images/w7.jpeg" alt="Event 7">
+      </div>
+      <button class="nav next" onclick="nextSlide('sidegallery1')">❯</button>
+    </div>
+  </section>
+
+  <!-- Sidegallery 2 -->
+  <section class="sidegallery-section">
+    <h2>International Yoga Day 2025 </h2>
+    <div class="sidegallery-container" id="sidegallery2">
+      <button class="nav prev" onclick="prevSlide('sidegallery2')">❮</button>
+      <div class="sidegallery-slide">
+        <img src="images/y1.jpeg" alt="Event 1">
+        <img src="images/y2.jpeg" alt="Event 2">
+        <img src="images/y3.jpeg" alt="Event 3">
+        <img src="images/y4.jpeg" alt="Event 4">
+        <img src="images/y5.jpeg" alt="Event 5">
+      </div>
+      <button class="nav next" onclick="nextSlide('sidegallery2')">❯</button>
+    </div>
+  </section>
+
+  <!-- Sidegallery 3 -->
+  <section class="sidegallery-section">
+    <h2>Other pictures</h2>
+    <div class="sidegallery-container" id="sidegallery3">
+      <button class="nav prev" onclick="prevSlide('sidegallery3')">❮</button>
+      <div class="sidegallery-slide">
+        <img src="images/12.jpeg" alt="Event 2">
+        <img src="images/11.jpeg" alt="Event 1">
+        <img src="images/16.jpeg" alt="Event 6">
+        <img src="images/17.jpeg" alt="Event 7">
+        <img src="images/18.jpeg" alt="Event 8">
+        <img src="images/19.jpeg" alt="Event 9">
+        <img src="images/14.jpeg" alt="Event 4">
+        <img src="images/15.jpeg" alt="Event 5">
+        <img src="images/13.jpeg" alt="Event 3">
+        
+      </div>
+      <button class="nav next" onclick="nextSlide('sidegallery3')">❯</button>
+    </div>
+  </section>
+
+  <footer>Copyright © ILM PRE-SCHOOL, Basmat, Hingoli</footer>
+
+  <script>
+    const galleries = {};
+
+    function showSlide(id, index) {
+      const container = document.getElementById(id);
+      const slide = container.querySelector('.sidegallery-slide');
+      const total = slide.children.length;
+      const width = slide.children[0].clientWidth;
+
+      if (!galleries[id]) galleries[id] = 0;
+
+      if (index >= total) galleries[id] = 0;
+      else if (index < 0) galleries[id] = total - 1;
+      else galleries[id] = index;
+
+      slide.style.transform = `translateX(-${galleries[id] * width}px)`;
+    }
+
+    function nextSlide(id) {
+      showSlide(id, (galleries[id] || 0) + 1);
+    }
+
+    function prevSlide(id) {
+      showSlide(id, (galleries[id] || 0) - 1);
+    }
+
+    window.onload = () => {
+      document.querySelectorAll('.sidegallery-container').forEach(gallery => {
+        showSlide(gallery.id, 0);
+      });
+    };
+  </script>
+</body>
+</html>
