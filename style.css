@@ -1,5 +1,4 @@
 
-/* === Header === */
 header {
   background: #06314bf3;
   color: white;
@@ -8,6 +7,9 @@ header {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  text-align: center;
+}
+body h3{
   text-align: center;
 }
 
@@ -36,8 +38,6 @@ header h5 {
   color: black;
   font-family: 'Times New Roman';
 }
-
-/* === Navigation === */
 nav ul {
   list-style: none;
   background: #011903bc;
@@ -63,7 +63,6 @@ nav a:hover {
   color: rgb(6, 6, 6);
 }
 
-/* === Director + Banner Section === */
 .director-banner {
   display: flex;
   justify-content: center;
@@ -77,10 +76,6 @@ nav a:hover {
   flex-wrap: wrap;
 }
 
-
-
-
-/* === Footer (if you add it later) === */
 footer {
   background: #06314bda;
   color: white;
@@ -96,59 +91,6 @@ footer {
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode';
   font-weight: bold;
   margin: 5px auto;
-}
-
-
-
-/* === Mobile Responsive === */
-@media (max-width: 600px) {
-  header h1 {
-    font-size: 20px;
-  }
-
-  header h5 {
-    font-size: 12px;
-  }
-
-  nav ul {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  nav li {
-    margin: 10px 0;
-  }
-
-  .director-banner {
-    flex-direction: column;
-    padding: 20px 10px;
-    color: none;
-
-  }
-
-  .director-photo {
-    width: 140px;
-    height: 160px;
-    margin-top: 0;
-  }
-
-  .left-photo h3 {
-    font-size: 18px;
-  }
-
-  .left-photo p {
-    font-size: 13px;
-  }
-
-  .school-banner {
-    width: 100%;
-    margin-left: 0;
-    margin-top: 10px;
-  }
-
-  footer {
-    font-size: 14px;
-  }
 }
 
 p {
@@ -200,8 +142,6 @@ p {
   box-shadow: 0 0 10px #999;
 }
 
-
-
 .mission{
 
 
@@ -238,10 +178,7 @@ p {
     text-align: center;
     font-family: 'sans-serif';
     font-size: 30px;
-
-
   }
-
 
 .lightlogo{
   background-color: #f8faf3;
@@ -268,7 +205,6 @@ p {
   margin: 5px auto;
   background-color: #e4e4df1a;
   border-radius: 10px;
-  /* gap: 45px; */
   
 } 
 ul.course-list li,
@@ -344,8 +280,6 @@ transition: transform 0.3s ease;
   transform: scale(1.03);}
 
 
-/* contact */
-
 .contact-container {
   display: flex;
   flex-direction: row;
@@ -357,7 +291,7 @@ transition: transform 0.3s ease;
 
 .contact-info,
 .contact-form {
-  flex: 0 0 48%; 
+  flex:0 0 50%; 
   background: #ffffffaa;
   padding: 20px;
   border-radius: 10px;
@@ -377,7 +311,7 @@ transition: transform 0.3s ease;
   background-color: #fb5f05a6;
   font-family: 'copperplate gothic';
 }
-/* Form Styles */
+
 .contact-form h2,
 .contact-info h2 {
   color: #0a3f60;
@@ -415,10 +349,8 @@ transition: transform 0.3s ease;
 
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
   .contact-container {
-    flex-direction: column;
+    flex-direction: row;
   }
 
   .contact-info,
@@ -427,9 +359,7 @@ transition: transform 0.3s ease;
     width: 100%;
     margin-bottom: 20px;
   }
-}
 
-/* events */
 .event-gallery {
   padding: 40px 20px;
   background-color: #f5f5f5a7;
@@ -486,8 +416,6 @@ transition: transform 0.3s ease;
   color: #100505;
 }
 
-/* sidebar */
-/* === Sidegallery Section === */
 .sidegallery-section {
   padding: 30px;
   text-align: center;
@@ -517,13 +445,12 @@ transition: transform 0.3s ease;
   border-radius: 12px;
 }
 
-/* === Navigation Arrows === */
 .nav {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: #06314b;
-  color: rgba(87, 7, 7, 0.547);
+  background: #fbce07;
+  color: rgb(234, 6, 6);
   border: none;
   padding: 12px;
   cursor: pointer;
@@ -546,7 +473,6 @@ transition: transform 0.3s ease;
 }
 
 
-/* === Event Gallery Section === */
 .event-gallery {
   padding: 20px;
   background-color: #f7f7f78e;
@@ -586,4 +512,129 @@ transition: transform 0.3s ease;
   padding: 15px;
   font-size: 18px;
   color: #100404;
+}
+/*  Mobile Responsive Design  */
+@media (max-width: 768px) {
+  body {
+    background-size: cover;
+    background-position: top;
+    background-attachment: scroll;
+  }
+
+  header {
+    padding: 10px;
+    text-align: center;
+  }
+
+  header h1 {
+    font-size: 22px;
+    margin-bottom: 5px;
+  }
+
+  
+  header h4 {
+    font-size: 16px;
+    margin: 5px 0;
+  }
+
+  header h5 {
+    font-size: 14px;
+    margin: 5px 0 10px 0;
+    padding: 0 10px;
+  }
+
+  nav ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    margin: 10px 0;
+    list-style-type: none;
+  
+  }
+
+  nav ul li {
+    margin: 8px 0;
+  }
+
+  nav ul li a {
+    font-size: 12px;
+    padding: 8px 12px;
+  }
+
+  .vision, .mission, .content-section, .contact-container, .contact-info, .contact-form {
+    padding: 15px;
+    margin: 10px;
+  }
+
+  p, li {
+    font-size: 15px;
+  }
+
+  h2, h3, h4, h5 {
+    font-size: 18px;
+    margin: 10px 0;
+  }
+
+  h1 {
+    font-size: 22px;
+    text-align: center;
+  }
+
+  .icon {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    display: block;
+    margin: 10px auto;
+  }
+
+  .course-list {
+    padding: 0;
+    list-style: none;
+  }
+
+  .course-list li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 15px 0;
+    font-size: 16px;
+  }
+
+  input, textarea {
+    width: 100%;
+    max-width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 16px;
+  }
+
+  button {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    background-color: #6e0d0d;
+    color: white;
+    border: none;
+    border-radius: 4px;
+  }
+
+  .ad, .banner {
+    width: 100%;
+    height: auto;
+    margin: 10px auto;
+    display: block;
+  }
+
+  .marquee-border {
+    padding: 5px;
+    font-size: 14px;
+  }
+
+  footer {
+    font-size: 14px;
+    text-align: center;
+    padding: 10px;
+  }
 }
